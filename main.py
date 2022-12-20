@@ -6,10 +6,10 @@ def generate(text):
     print(text)
     token = "<YOUR-API-TOKEN-HERE>"
     model = "text-davinci-003"
-    temperature = 0.8
-    max_tokens = 4000
+    temperature = "0.8"
+    max_tokens = "4000"
 
-    data_send = '{"model": "'+model+'","prompt": "'+text.rstrip()+'" ,"temperature":'+temperature+', "max_tokens": '+max_tokens+', "n":1 , "stream": false}'
+    data_send = '{"model": "'+model+'","prompt": "'+text.rstrip()+'" ,"temperature": '+temperature+', "max_tokens": '+max_tokens+', "n":1 , "stream": false}'
     data_send = json.loads(data_send)
     headers = {'Content-Type' : 'application/json; charset=utf-8', 'Authorization': 'Bearer '+token}
     try:
@@ -34,13 +34,11 @@ def openFile(filename):
     f = open(filename, 'r', encoding="utf-8")
     lines = f.readlines()
     for line in lines:
-        # print(type(line))
         answer = generate(line)
         writeLine(line, answer)
-    print("")
+    print("ENDING")
 
 if __name__ == '__main__':
-    print("")
-    result = openFile("questions-example.txt")
-
+    print("START")
+    result = openFile("questions.txt")
 #by J4nush
