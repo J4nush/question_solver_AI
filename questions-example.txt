@@ -1,0 +1,3 @@
+Simple data types in programming languages. Methods of character encoding. Fixed-position and floating-position numbers.
+Overloading operators, this pointer, references in C++.
+Algorithms for finding information in arrays.
